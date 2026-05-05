@@ -868,7 +868,7 @@ const FreshLeadModal: React.FC<{
           </Field>
           <Field label="Status">
             <select value={form.leadStatus} onChange={(e) => setForm((p) => ({ ...p, leadStatus: e.target.value as LeadStatus }))} className="mt-1 w-full h-10 px-3 rounded-xl border border-input bg-background text-sm focus:outline-none focus:ring-2 focus:ring-ring">
-              {['New', 'Contacted', 'Follow-up', 'Qualified', 'Converted', 'Closed', 'Not Interested'].map((s) => (
+              {LEAD_STATUSES.map((s) => (
                 <option key={s} value={s}>{s}</option>
               ))}
             </select>

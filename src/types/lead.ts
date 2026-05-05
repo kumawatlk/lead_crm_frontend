@@ -1,4 +1,12 @@
-export type LeadStatus = 'New' | 'Contacted' | 'Follow-up' | 'Qualified' | 'Converted' | 'Closed' | 'Not Interested';
+export type LeadStatus =
+  | 'New'
+  | 'Contacted'
+  | 'Follow-up'
+  | 'Qualified'
+  | 'Converted'
+  | 'Closed'
+  | 'Not Connected'
+  | 'Not Interested';
 
 export interface Lead {
   id: string;
@@ -27,7 +35,16 @@ export interface FreshLead {
   lastUpdated: string;
 }
 
-export const LEAD_STATUSES: LeadStatus[] = ['New', 'Contacted', 'Follow-up', 'Qualified', 'Converted', 'Closed', 'Not Interested'];
+export const LEAD_STATUSES: LeadStatus[] = [
+  'New',
+  'Contacted',
+  'Follow-up',
+  'Qualified',
+  'Converted',
+  'Closed',
+  'Not Connected',
+  'Not Interested',
+];
 
 export const AVAILABLE_TAGS = [
   'Hot Lead',
@@ -49,6 +66,7 @@ export const STATUS_COLORS: Record<LeadStatus, { bg: string; text: string; dot: 
   Qualified: { bg: 'bg-cyan-50', text: 'text-cyan-700', dot: 'bg-cyan-500' },
   Converted: { bg: 'bg-emerald-50', text: 'text-emerald-700', dot: 'bg-emerald-500' },
   Closed: { bg: 'bg-gray-50', text: 'text-gray-700', dot: 'bg-gray-500' },
+  'Not Connected': { bg: 'bg-orange-50', text: 'text-orange-700', dot: 'bg-orange-500' },
   'Not Interested': { bg: 'bg-red-50', text: 'text-red-700', dot: 'bg-red-500' },
 };
 

@@ -1,6 +1,6 @@
 import type { FreshLead, Lead, LeadStatus } from '@/types/lead';
 
-const API_BASE = import.meta.env.VITE_API_URL;
+const API_BASE = import.meta.env.VITE_API_URL || 'http://localhost:5000/api';
 
 export type AuthUser = { id: string; name: string; email: string };
 

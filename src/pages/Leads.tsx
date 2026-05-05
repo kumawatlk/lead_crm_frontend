@@ -409,6 +409,7 @@ const Leads: React.FC = () => {
                     <RowActions
                       onView={() => setDetailLead(lead)}
                       onEdit={() => setEditLead(lead)}
+                      onAddNote={() => setEditLead(lead)}
                       onDelete={() => handleDeleteAndCloseMenu(lead.id)}
                       onExport={() => handleRowExport(lead)}
                       onQuickExport={() => handleQuickRowExport(lead)}
@@ -472,10 +473,11 @@ const Leads: React.FC = () => {
 const RowActions: React.FC<{
   onView: () => void;
   onEdit: () => void;
+  onAddNote: () => void;
   onDelete: () => void;
   onExport: () => void;
   onQuickExport: () => void;
-}> = ({ onView, onEdit, onDelete, onExport, onQuickExport }) => {
+}> = ({ onView, onEdit, onAddNote, onDelete, onExport, onQuickExport }) => {
   const [open, setOpen] = useState(false);
   return (
     <div className="relative">
@@ -489,7 +491,7 @@ const RowActions: React.FC<{
             {[
               { label: 'View', icon: Eye, action: onView, destructive: false },
               { label: 'Edit', icon: Pencil, action: onEdit, destructive: false },
-              { label: 'Add Note', icon: StickyNote, action: () => toast.info('Note editor opened'), destructive: false },
+              { label: 'Add Note', icon: StickyNote, action: onAddNote, destructive: false },
               { label: 'Export', icon: Download, action: onExport, destructive: false },
               { label: 'Quick Export CSV', icon: Download, action: onQuickExport, destructive: false },
               { label: 'Delete', icon: Trash2, action: onDelete, destructive: true },
